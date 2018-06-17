@@ -1,1 +1,4 @@
 registerServiceWorker.js
+scripts/
+config/
+public/

@@ -1,26 +1,14 @@
-import { observer } from 'mobx-react';
+import { observer, inject } from 'mobx-react';
 import React from 'react';
+import PropTypes from 'prop-types';
 import './App.css';
-// import store from './AppStore';
-// import GeoWeather from './pages/GeoWeather/GeoWeather';
+
+@inject('store')
 @observer
-class App extends React.Component {
+export default class App extends React.Component {
+  static propTypes = { store: PropTypes.object.isRequired };
+
   render() {
-    // <Provider store={store}>
-    //   <GeoWeather />
-    // </Provider>
-    return <h1>{this.props.store.city[0]}</h1>
+    return <h1>{this.props.store.city[0]}</h1>;
   }
 }
-// const App = () => (
-//   <div className="App">
-//     <header className="App-header">
-//       <h1 className="App-title">Welcome to React</h1>
-//     </header>
-//     <p className="App-intro">
-//       To get started, edit <code>src/App.js</code> and save to reload.
-//     </p>
-//   </div>
-// );
-
-// export default App;
